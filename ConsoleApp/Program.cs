@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    class Basic
+    class Program
     {
         enum DayOfWeek
         {
@@ -52,6 +52,51 @@ namespace ConsoleApp
             Console.WriteLine("enter a number...");
             int num = int.Parse(Console.ReadLine());  // parsing input (e.g., double.Parse(), char.Parse(), etc.)
             Console.WriteLine("input number: {0}", num);
+            Console.WriteLine("------------------------------------");
+
+            // array
+            int[] arr1 = new int[3];
+            int[] arr2 = new int[3] { 5, 6, 7 };
+            int[] arr3 = new int[] { 5, 6, 7 };
+            int[] arr4 = { 5, 6, 7 };
+
+            Console.Write("for array elements: ");
+            for (int i=0; i<arr2.Length; i++)  // array.Length
+            {
+                Console.Write(arr2[i] + " ");
+            }
+            Console.WriteLine();
+
+            Console.Write("foreach array elements: ");
+            foreach (int ele in arr2)  // foreach (dataType ele in arr)
+            {
+                Console.Write(ele + " ");
+            }
+            Console.WriteLine();
+
+            // array methods
+            int[] arr5 = { 10, 15, 20, 30, 35, 40, 45 };
+            int target = 20;
+            int ans = Array.BinarySearch(arr5, target);  // build-in binary search
+            if (ans < 0) Console.WriteLine("number not exist");
+            else Console.WriteLine("the target position is index {0}", ans);
+
+            int[] arr6 = { 16, 18, 9, 3, 24, 7 };
+            Array.Sort(arr6);  // build-in sorting
+            Console.Write("sorting array: ");
+            for (int i=0; i<arr6.Length; i++)
+            {
+                Console.Write(arr6[i] + " ");
+            }
+            Console.WriteLine();
+            
+            Array.Reverse(arr6);  // build-in reverse
+            Console.Write("reverse array: ");
+            for (int i = 0; i < arr6.Length; i++)
+            {
+                Console.Write(arr6[i] + " ");
+            }
+            Console.WriteLine();
         }
     }
 }
