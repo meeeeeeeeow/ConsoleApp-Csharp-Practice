@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    class Program
+    class Basic
     {
         enum DayOfWeek
         {
@@ -50,7 +50,7 @@ namespace ConsoleApp
             Console.WriteLine("input string: {0}", message);
 
             Console.WriteLine("enter a number...");
-            int num = int.Parse(Console.ReadLine());  // parse input integer
+            int num = int.Parse(Console.ReadLine());  // parsing input (e.g., double.Parse(), char.Parse(), etc.)
             Console.WriteLine("input number: {0}", num);
         }
     }
