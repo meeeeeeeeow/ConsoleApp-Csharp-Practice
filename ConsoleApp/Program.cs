@@ -59,7 +59,13 @@ namespace ConsoleApp
             int[] arr2 = new int[3] { 5, 6, 7 };
             int[] arr3 = new int[] { 5, 6, 7 };
             int[] arr4 = { 5, 6, 7 };
-            int[,] arr2D = new int[3, 4];  // declar 2d array using [,]
+            int[,] arr2D = new int[3, 4];  // declare 2d array using [,] -> arr2D[i, j]
+
+            int[][] arrDynamic = new int[3][];  // declare n-d array with defferent dimension -> arrDynamic[i][j]
+            arrDynamic[0] = new int[4] {0, 1, 2, 3};
+            arrDynamic[1] = new int[8] {8, 7, 6, 5, 4, 3, 2, 1};
+            arrDynamic[2] = new int[2] {5, 6};
+            Console.WriteLine("array element: {0}", arrDynamic[1][5]);
 
             Console.Write("for array elements: ");
             for (int i=0; i<arr2.Length; i++)  // array.Length
@@ -97,7 +103,7 @@ namespace ConsoleApp
             {
                 Console.Write(arr6[i] + " ");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n------------------------------------");
         }
     }
 }
