@@ -31,6 +31,16 @@ namespace ConsoleApp
             mult = a * b;
         }
 
+        public static void PrintArray(params int[] arr)  // using the key word "params"
+        {
+            Console.Write("key word params: ");
+            for (int i=0; i<arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
             int n = 5, nonInit;
@@ -132,6 +142,10 @@ namespace ConsoleApp
             int add, mult;
             AddAndMult(5, 10, out add, out mult);
             Console.WriteLine("return multi-val by using out: {0}, {1}", add, mult);
+
+            PrintArray(arr6);
+            PrintArray(5, 6, 7, 8, 9);  // params key words
+            
         }
     }
 }
