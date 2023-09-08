@@ -59,6 +59,7 @@ namespace ConsoleApp
             int[] arr2 = new int[3] { 5, 6, 7 };
             int[] arr3 = new int[] { 5, 6, 7 };
             int[] arr4 = { 5, 6, 7 };
+            int[,] arr2D = new int[3, 4];  // declar 2d array using [,]
 
             Console.Write("for array elements: ");
             for (int i=0; i<arr2.Length; i++)  // array.Length
