@@ -14,9 +14,26 @@ namespace ConsoleApp
             Sun, Mon, Tue, Wed, Thu, Fri, Sat
         }
 
+        public static void PassByRef(int[] arr, ref int val, out int val2)  // public/private static(?) returnType
+        {
+            arr[0] += 3;  // array -> originally pass by reference
+            val += 1;
+            Console.WriteLine("after adding: {0}, {1}", arr[0], val);
+
+            val2 = 0;
+            val2 += 1;
+            Console.WriteLine("init and add out value: {0}", val2);
+        }
+
+        public static void AddAndMult(int a, int b, out int add, out int mult)
+        {
+            add = a + b;
+            mult = a * b;
+        }
+
         static void Main(string[] args)
         {
-            int n = 5;
+            int n = 5, nonInit;
             double d = 5.5;
 
             // 5 spaces before print the number n (after -> -5)
@@ -104,6 +121,17 @@ namespace ConsoleApp
                 Console.Write(arr6[i] + " ");
             }
             Console.WriteLine("\n------------------------------------");
+
+            // function passed by reference
+            // using key word "ref n"
+            // using key word "out n" if no value assigned when declaring
+            PassByRef(arr6, ref n, out nonInit);
+            Console.WriteLine("values after function calling: {0}, {1}, {2}", arr6[0], n, nonInit);
+
+            // return multiple variables
+            int add, mult;
+            AddAndMult(5, 10, out add, out mult);
+            Console.WriteLine("return multi-val by using out: {0}, {1}", add, mult);
         }
     }
 }
