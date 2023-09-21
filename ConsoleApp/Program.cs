@@ -153,6 +153,13 @@ namespace ConsoleApp
             PrintArray(5, 6, 7, 8, 9);  // params key words
 
             OptionalAdd(5, z: 5);  // optional parameters (using z:num to pass z value)
+            Console.WriteLine("------------------------------------");
+
+            // class
+            Student s1 = new Student("Jaemin", "Nana", 23, 101);
+            s1.SayHello();
+            s1.Name = "Jisung";
+            Console.WriteLine("s1's new name/nickname: {0}/{1}", s1.Name, s1.NickName);
         }
     }
 }
