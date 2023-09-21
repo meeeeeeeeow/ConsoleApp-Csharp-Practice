@@ -41,6 +41,12 @@ namespace ConsoleApp
             Console.WriteLine();
         }
 
+        public static void OptionalAdd(int x, int y = 1, int z = 2)
+        {
+            int ans = x + y + z;
+            Console.WriteLine("optional parameters: " + ans);
+        }
+
         static void Main(string[] args)
         {
             int n = 5, nonInit;
@@ -145,7 +151,8 @@ namespace ConsoleApp
 
             PrintArray(arr6);
             PrintArray(5, 6, 7, 8, 9);  // params key words
-            
+
+            OptionalAdd(5, z: 5);  // optional parameters (using z:num to pass z value)
         }
     }
 }
