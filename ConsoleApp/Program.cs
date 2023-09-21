@@ -47,6 +47,12 @@ namespace ConsoleApp
             Console.WriteLine("optional parameters: " + ans);
         }
 
+        public static void ChangePerson(Person p)
+        {
+            p.Name = "Jisung";
+            p.Age = 22;
+        }
+
         static void Main(string[] args)
         {
             int n = 5, nonInit;
@@ -160,6 +166,28 @@ namespace ConsoleApp
             s1.SayHello();
             s1.Name = "Jisung";
             Console.WriteLine("s1's new name/nickname: {0}/{1}", s1.Name, s1.NickName);
+
+            BankAccount bank1 = new BankAccount(100, "Jaemin");
+            BankAccount bank2 = new BankAccount(200, "Dream");
+            BankAccount bank3 = bank1 + bank2;
+            Console.WriteLine("bank3's info: {0}/{1}", bank3.Owner, bank3.Money);
+
+            Person p1 = new Person("Jaemin", 23);
+            Console.WriteLine("person BEFORE: {0}, {1}", p1.Name, p1.Age);
+            ChangePerson(p1);
+            Console.WriteLine("person AFTER: {0}, {1}", p1.Name, p1.Age);
+            Person p2 = p1;  // another change
+            p2.Name = "Mark";
+            Console.WriteLine("person AFTER ALTER: {0}, {1}", p1.Name, p1.Age);  // p2 refers to p1, so p1 and p2 change at the same time
+
+            // array of object
+            Person[] peopleArr = new Person[2];
+            peopleArr[0] = new Person("Luna", 3);
+            peopleArr[1] = new Person("Lucy", 2);
+            for (int i=0; i<peopleArr.Length; i++)
+            {
+                Console.Write("cat {0}! ", peopleArr[i].Name);
+            }
         }
     }
 }
